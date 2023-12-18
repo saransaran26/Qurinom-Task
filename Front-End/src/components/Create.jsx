@@ -9,6 +9,7 @@ function Create() {
   const [image, setimage] = useState("");
   const [name, setname] = useState("");
   const [title, settitle] = useState("");
+  const[bool,setbool] = useState(false)
   // const [file, setfile] = useState(null);
   const handleinput = async (e) => {
     //setfile(e.target.files[0]);
@@ -24,6 +25,7 @@ function Create() {
   };
 
   const handleCreate = async () => {
+    setbool(true)
     const payload = {
       name,
       title,
@@ -35,8 +37,10 @@ function Create() {
         payload
       );
       console.log(res.data);
+      setbool(false)
       navigate("/home");
     } catch (error) {
+      setbool(false)
       console.log(error.data);
     }
   };
@@ -49,6 +53,8 @@ function Create() {
             Create new one to upload
           </h1>
         </div>
+        {bool && <p className="text-3xl font-semibold text-red-600 my-5">Loading to upload please wait...</p>}
+
         <div className="flex flex-col">
           
           <input
@@ -80,7 +86,6 @@ function Create() {
             )}
           </div>
         </div>
-        
         <div className="mt-4 flex justify-center items-center">
           <button
             className="px-5 py-2 bg-black text-white rounded-md"
