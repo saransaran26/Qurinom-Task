@@ -9,23 +9,12 @@ function Home() {
   const[data,setdata] = useState([])
   const[bool,setbool] = useState(false)
   const[del,setdel] = useState(false)
-  //console.log("datas is",data);
-  
-  // useEffect(()=>{
-  //   setbool(true)
-  //   const findit = async()=>{
-  //     const res = await axios.get('http://localhost:4000/api/post')
-  //     //console.log("ans",res.data);
-  //     setdata(res.data)
-  //     setbool(false)
-  //   }
-  //   findit()
-  // },[])
+ 
 
   useEffect(()=>{
     setbool(true)
     const findit = async()=>{
-      const res = await axios.get('http://localhost:4000/api/post')
+      const res = await axios.get('https://qurinom-task.onrender.com/api/post')
       //console.log("ans",res.data);
       setdata(res.data)
       setbool(false)
@@ -36,7 +25,7 @@ function Home() {
   const handleDelete = async(id) => {
     console.log("Clicked");
     try {
-      const res = await axios.delete(`http://localhost:4000/api/post/delete/${id}`)
+      const res = await axios.delete(`https://qurinom-task.onrender.com/api/post/delete/${id}`)
     console.log(res.data);
     setdel(true)
     setTimeout(()=>{

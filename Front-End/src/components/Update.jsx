@@ -17,7 +17,7 @@ function Update() {
         image
       }
       try {
-        const res = await axios.put(`http://localhost:4000/api/post/update/${id}`,payload)
+        const res = await axios.put(`https://qurinom-task.onrender.com/api/post/update/${id}`,payload)
         console.log(res);
         navigate('/home')
       } catch (error) {
@@ -42,7 +42,7 @@ function Update() {
   useEffect(()=>{
     const updates = async() => {
       try {
-        const res = await axios.get(`http://localhost:4000/api/post/getbyid/${id}`)
+        const res = await axios.get(`https://qurinom-task.onrender.com/api/post/getbyid/${id}`)
         console.log("After get updates",res.data.name);
         setname(res.data.name)
         settitle(res.data.title)

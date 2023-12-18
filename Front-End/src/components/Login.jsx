@@ -18,19 +18,10 @@ function Login() {
     console.log("Clicked");
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4000/api/user/login", {
+      const res = await axios.post("https://qurinom-task.onrender.com/api/user/login", {
         email,
         password,
       });
-      // try {
-      //   const payload = {
-      //     email:res.data.email
-      //   }
-      //   const data = await axios.post('http://localhost:4000/api/data/postdata',payload)
-      //   console.log("for login",data.data.email);
-      // } catch (error) {
-      //   console.log(error.data);
-      // }
       setloading(false)
       navigate("/home");
       

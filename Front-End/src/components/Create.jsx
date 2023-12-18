@@ -31,7 +31,7 @@ function Create() {
     };
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/post/create",
+        "https://qurinom-task.onrender.com/api/post/create",
         payload
       );
       console.log(res.data);

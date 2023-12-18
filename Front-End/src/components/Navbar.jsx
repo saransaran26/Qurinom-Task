@@ -20,19 +20,6 @@ function Navbar() {
     dispatch(removeuser())
     navigate('/login')
   }
-  // useEffect(()=>{
-  //   const logindata = async() => {
-  //     try {
-  //       const res = await axios.get('http://localhost:4000/api/data')
-  //       console.log("for navbar",res.data.email);
-  //       setshow(res.data.email)
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-      
-  //   }
-  //   logindata()
-  // },[])
   return (
     <div className="bg-black text-white w-full h-[85px] flex items-center px-8 justify-between">
       <div>
